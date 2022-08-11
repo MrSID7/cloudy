@@ -1,6 +1,6 @@
 # cloudy
 
-A new Flutter project.
+A new Flutter project for Cloud storage platform.
 
 ## Getting Started
 
