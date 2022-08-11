@@ -1,5 +1,5 @@
 import 'package:cloudy/src/core/themes/light/theme_core.dart/default_theme.dart';
-import 'package:cloudy/src/features/Intro/presentation/views/pages/signup_page.dart';
+import 'package:cloudy/src/features/Intro/presentation/views/pages/intro_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
       ],
-      home: const SignupPage(),
+      home: const IntroPage(),
     );
   }
 }

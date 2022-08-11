@@ -1,5 +1,5 @@
 import 'package:cloudy/src/core/extention/ext_export.dart';
 
-extension WExt on Widget {
-  land() => CustomRoute(builder: (_) => this);
+extension WExt<T> on Widget {
+  CustomRoute land() => CustomRoute(builder: (_) => this);
 }

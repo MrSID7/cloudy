@@ -1,3 +1,5 @@
+import 'package:cloudy/src/core/constants/enum/button_enum.dart';
+import 'package:cloudy/src/core/constraints/button_constraints.dart';
 import 'package:cloudy/src/core/extention/ext_export.dart';
 import 'package:cloudy/src/features/common_widget/custom_text_widget.dart';
 import 'package:flutter_svg/svg.dart';
@@ -9,12 +11,11 @@ class CustomElevatedButtom extends StatelessWidget {
     this.icon,
     this.buttonTextStyle,
     this.iconToButton = true,
-    this.heroTag='',
     this.buttonText,
     this.iconPath,
+    this.buttontype = Buttontype.normal,
     Key? key,
   }) : super(key: key);
-  final String heroTag;
   final bool iconToButton;
   final Icon? icon;
   final String? iconPath;
@@ -22,18 +23,19 @@ class CustomElevatedButtom extends StatelessWidget {
   final TextStyle? buttonTextStyle;
   final Color backgroundColor;
   final Function ontap;
+  final Buttontype buttontype;
 
   @override
   Widget build(BuildContext context) {
-    return Hero(
-      tag: heroTag,
+    return Material(
+      borderRadius: ButtonConstraints.borderRadius(buttontype),
       child: InkWell(
-        onTap: ontap(),
+        onTap: () => ontap(),
         child: Container(
           width: 150,
           height: 50,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: ButtonConstraints.borderRadius(buttontype),
             color: backgroundColor,
           ),
           padding: const EdgeInsets.only(
@@ -45,7 +47,11 @@ class CustomElevatedButtom extends StatelessWidget {
             height: 26,
             child: Row(
               mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: buttontype == (Buttontype.normalSingle)
+                  ? MainAxisAlignment.center
+                  : buttontype == (Buttontype.normalSingle)
+                      ? MainAxisAlignment.center
+                      : MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 (iconPath == null && icon == null)

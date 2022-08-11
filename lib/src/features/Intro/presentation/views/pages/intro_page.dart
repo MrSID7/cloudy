@@ -1,13 +1,15 @@
 import 'package:cloudy/src/core/constants/assets.dart';
+import 'package:cloudy/src/core/constants/enum/button_enum.dart';
 import 'package:cloudy/src/core/constants/hero_id.dart';
 import 'package:cloudy/src/core/constants/res/colors.dart';
 import 'package:cloudy/src/core/extention/ext_export.dart';
 import 'package:cloudy/src/features/common_widget/custom_elevated_button.dart';
 import 'package:cloudy/src/features/common_widget/custom_text_widget.dart';
+import 'package:cloudy/src/features/signin/presentation/views/sigin_in.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class SignupPage extends StatelessWidget {
-  const SignupPage({Key? key}) : super(key: key);
+class IntroPage extends StatelessWidget {
+  const IntroPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -55,26 +57,34 @@ class SignupPage extends StatelessWidget {
                   60.space(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <CustomElevatedButtom>[
-                      CustomElevatedButtom(
-                        backgroundColor: lighblueBtn,
-                        buttonText: 'Smart Id',
-                        iconPath: 'assets/svg/fingerprint.svg',
-                        buttonTextStyle: context.theme().textTheme.bodyText2,
-                        heroTag: smartId,
-                        ontap: () {},
-                      ),
-                      CustomElevatedButtom(
-                        backgroundColor: signinbuttontxtclr,
-                        buttonText: 'Sign in',
-                        heroTag: signInId,
-                        icon: const Icon(
-                          Icons.forward,
-                          color: white,
+                    children: <Hero>[
+                      Hero(
+                        tag: smartId,
+                        child: CustomElevatedButtom(
+                          buttontype: Buttontype.signin,
+                          backgroundColor: lighblueBtn,
+                          buttonText: 'Smart Id',
+                          iconPath: 'assets/svg/fingerprint.svg',
+                          buttonTextStyle: context.theme().textTheme.bodyText2,
+                          ontap: () {},
                         ),
-                        buttonTextStyle: context.theme().textTheme.bodyText1,
-                        iconToButton: false,
-                        ontap: () {},
+                      ),
+                      Hero(
+                        transitionOnUserGestures: true,
+                        tag: signInId,
+                        child: CustomElevatedButtom(
+                          buttontype: Buttontype.signin,
+                          backgroundColor: signinbuttontxtclr,
+                          buttonText: 'Sign in',
+                          icon: const Icon(
+                            Icons.forward,
+                            color: white,
+                          ),
+                          buttonTextStyle: context.theme().textTheme.bodyText1,
+                          iconToButton: false,
+                          ontap: () =>
+                              context.to().push(const SignInPage().land()),
+                        ),
                       ),
                     ],
                   ),

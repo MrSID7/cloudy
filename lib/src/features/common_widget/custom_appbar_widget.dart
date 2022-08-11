@@ -11,6 +11,8 @@ class CustomAppBar extends StatelessWidget {
     this.leadingWidget,
     this.toolbarHeight,
     this.actionWidgets,
+    this.textStyle,
+    this.centerTitle = false,
     Key? key,
   }) : super(key: key);
   final String? titleAsString;
@@ -20,11 +22,18 @@ class CustomAppBar extends StatelessWidget {
   final Widget? leadingWidget;
   final double? toolbarHeight;
   final List<Widget>? actionWidgets;
+  final bool centerTitle;
+  final TextStyle? textStyle;
 
   @override
   Widget build(BuildContext context) => AppBar(
+        centerTitle: centerTitle,
         leading: leadingWidget,
-        title: titleAsWidget ?? Text(titleAsString ?? ''),
+        title: titleAsWidget ??
+            Text(
+              titleAsString ?? '',
+              style: textStyle,
+            ),
         actions: actionWidgets,
         backgroundColor: backgroundColor,
         foregroundColor: transp,
