@@ -1,0 +1,10 @@
+{
+    "common":{
+        "app_name_heading":"CLOUDY"
+
+    },
+    "signup_Screen":{
+        "welcome_to":"Welcome to",
+        "description":"Best cloud storage platform for all business and individuals to manage there data Join For Free."
+    }
+}
