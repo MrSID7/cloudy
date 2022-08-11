@@ -6,6 +6,7 @@ import 'package:cloudy/src/features/common_widget/custom_appbar_widget.dart';
 import 'package:cloudy/src/features/common_widget/custom_elevated_button.dart';
 import 'package:cloudy/src/features/common_widget/custom_text_widget.dart';
 import 'package:cloudy/src/features/common_widget/text_form_field.dart';
+import 'package:cloudy/src/features/home/presentation/views/home_view.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -55,8 +56,8 @@ class SignInPage extends StatelessWidget {
                 buttonText: 'Sign in',
                 buttonTextStyle: context.theme().textTheme.bodyText1,
                 iconToButton: false,
-                ontap: () {},
-              )
+                ontap: () => context.to().push(const HomeView().land()),
+              ),
             ],
           ),
         ),

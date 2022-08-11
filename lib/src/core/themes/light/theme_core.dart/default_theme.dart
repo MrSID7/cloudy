@@ -4,6 +4,7 @@ import 'package:cloudy/src/core/themes/light/text_theme.dart';
 
 class Themes {
   static final theme = ThemeData(
+    primaryTextTheme: textTheme,
     textTheme: textTheme,
     iconTheme: iconTheme,
   );

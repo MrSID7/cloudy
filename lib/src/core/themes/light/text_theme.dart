@@ -36,4 +36,10 @@ const textTheme = TextTheme(
     fontSize: 15,
     fontWeight: FontWeight.bold,
   ),
+  caption: TextStyle(
+    color: heading1Color,
+    fontFamily: 'gilroy',
+    fontSize: 15,
+    fontWeight: FontWeight.bold,
+  ),
 );
