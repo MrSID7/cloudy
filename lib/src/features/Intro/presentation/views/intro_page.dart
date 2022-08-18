@@ -10,7 +10,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,38 +54,66 @@ class IntroPage extends StatelessWidget {
                     style: context.theme().textTheme.subtitle1,
                   ),
                   60.space(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Hero>[
-                      Hero(
-                        tag: smartId,
-                        child: CustomElevatedButtom(
-                          buttontype: Buttontype.signin,
-                          backgroundColor: lighblueBtn,
-                          buttonText: 'Smart Id',
-                          iconPath: 'assets/svg/fingerprint.svg',
-                          buttonTextStyle: context.theme().textTheme.bodyText2,
-                          ontap: () {},
-                        ),
-                      ),
-                      Hero(
-                        transitionOnUserGestures: true,
-                        tag: signInId,
-                        child: CustomElevatedButtom(
-                          buttontype: Buttontype.signin,
-                          backgroundColor: signinbuttontxtclr,
-                          buttonText: 'Sign in',
-                          icon: const Icon(
-                            Icons.forward,
-                            color: white,
-                          ),
-                          buttonTextStyle: context.theme().textTheme.bodyText1,
-                          iconToButton: false,
-                          ontap: () =>
-                              context.to().push(const SignInPage().land()),
-                        ),
-                      ),
-                    ],
+                  SizedBox(
+                    height: 50,
+                    width: context.getSize().width,
+                    child: Stack(
+                      children: <Widget>[
+                        TweenAnimationBuilder(
+                            curve: Curves.linear,
+                            duration: const Duration(seconds: 1),
+                            tween: Tween<double>(
+                                begin: 0, end: context.getSize().width / 2),
+                            builder: (context, double value, __) {
+                              return Positioned(
+                                left: value,
+                                top: 0,
+                                child: Hero(
+                                  tag: smartId,
+                                  child: CustomElevatedButtom(
+                                    buttontype: Buttontype.signin,
+                                    backgroundColor: lighblueBtn,
+                                    buttonText: 'Smart Id',
+                                    iconPath: 'assets/svg/fingerprint.svg',
+                                    buttonTextStyle:
+                                        context.theme().textTheme.bodyText2,
+                                    ontap: () {},
+                                  ),
+                                ),
+                              );
+                            }),
+                        TweenAnimationBuilder(
+                            curve: Curves.linear,
+                            duration: const Duration(seconds: 1),
+                            tween: Tween<double>(
+                                begin: 0, end: context.getSize().width / 2),
+                            builder: (context, double value, __) {
+                              return Positioned(
+                                right: value,
+                                top: 0,
+                                child: Hero(
+                                  transitionOnUserGestures: true,
+                                  tag: signInId,
+                                  child: CustomElevatedButtom(
+                                    buttontype: Buttontype.signin,
+                                    backgroundColor: signinbuttontxtclr,
+                                    buttonText: 'Sign in',
+                                    icon: const Icon(
+                                      Icons.forward,
+                                      color: white,
+                                    ),
+                                    buttonTextStyle:
+                                        context.theme().textTheme.bodyText1,
+                                    iconToButton: false,
+                                    ontap: () => context
+                                        .to()
+                                        .push(const SignInPage().land()),
+                                  ),
+                                ),
+                              );
+                            }),
+                      ],
+                    ),
                   ),
                   40.space(),
                   Column(

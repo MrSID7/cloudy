@@ -62,7 +62,7 @@ class CustomElevatedButtom extends StatelessWidget {
                 buttonText == null
                     ? 0.space()
                     : CustomTextWidget(
-                        buttonText??'',
+                        buttonText ?? '',
                         style: buttonTextStyle,
                       )
               ].reverseTo(!iconToButton),

@@ -1,5 +1,7 @@
+import 'package:cloudy/src/core/constants/assets.dart';
 import 'package:cloudy/src/core/extention/ext_export.dart';
 import 'package:cloudy/src/features/common_widget/custom_text_widget.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class FolderCard extends StatelessWidget {
   const FolderCard({Key? key}) : super(key: key);
@@ -44,7 +46,7 @@ class FolderCard extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  child: const FlutterLogo(size: 28.00020980834961),
+                  child: SvgPicture.asset(folderSvgIcons.itemAtrandomIndex()),
                 ),
                 const SizedBox(height: 7),
                 const CustomTextWidget(

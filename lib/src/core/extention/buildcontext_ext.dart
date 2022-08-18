@@ -9,5 +9,5 @@ extension BExt on BuildContext {
 class CustomRoute extends MaterialPageRoute {
   CustomRoute({required super.builder});
   @override
-  Duration get transitionDuration => const Duration(milliseconds: 1000);
+  Duration get transitionDuration => const Duration(milliseconds: 600);
 }
