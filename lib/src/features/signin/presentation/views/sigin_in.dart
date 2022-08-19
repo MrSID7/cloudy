@@ -52,7 +52,7 @@ class SignInPage extends StatelessWidget {
               ),
               CustomElevatedButtom(
                 buttontype: Buttontype.normalSingle,
-                backgroundColor: signinbuttontxtclr,
+                backgroundColor: clrMidLightblueDF4,
                 buttonText: 'Sign in',
                 buttonTextStyle: context.theme().textTheme.bodyText1,
                 iconToButton: false,

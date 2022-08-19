@@ -31,7 +31,7 @@ const textTheme = TextTheme(
     fontWeight: FontWeight.bold,
   ),
   bodyText2: TextStyle(
-    color: signinbuttontxtclr,
+    color: clrMidLightblueDF4,
     fontFamily: 'gilroy',
     fontSize: 15,
     fontWeight: FontWeight.bold,
@@ -41,5 +41,11 @@ const textTheme = TextTheme(
     fontFamily: 'gilroy',
     fontSize: 15,
     fontWeight: FontWeight.bold,
+  ),
+  labelMedium: TextStyle(
+    color: darkblue,
+    fontFamily: 'gilroy_bold',
+    fontWeight: FontWeight.bold,
+    fontSize: 20,
   ),
 );

@@ -1,7 +1,4 @@
-import 'dart:convert';
-
 import 'package:cloudy/src/core/extention/ext_export.dart';
-import 'package:flutter/services.dart';
 
 class Applocalizations {
   final Locale locale;
@@ -11,12 +8,12 @@ class Applocalizations {
     return Localizations.of<Applocalizations>(context, Applocalizations);
   }
 
-  Map<String, dynamic> _localization = {};
+  // Map<String, dynamic> _localization = {};
   Future<bool> load() async {
-    String jsonString = await rootBundle
-        .loadString('assets/locales/${locale.languageCode}.json');
-    Map<String, dynamic> data = jsonDecode(jsonString);
-    _localization = data.map((key, value) => MapEntry(key, value));
+    // String jsonString = await rootBundle
+    // .loadString('assets/locales/${locale.languageCode}.json');
+    // Map<String, dynamic> data = jsonDecode(jsonString);
+    // _localization = data.map((key, value) => MapEntry(key, value));
     return true;
   }
 }

@@ -13,6 +13,7 @@ class CustomAppBar extends StatelessWidget {
     this.actionWidgets,
     this.textStyle,
     this.centerTitle = false,
+    this.automaticallyImplyLeading = false,
     Key? key,
   }) : super(key: key);
   final String? titleAsString;
@@ -23,6 +24,7 @@ class CustomAppBar extends StatelessWidget {
   final double? toolbarHeight;
   final List<Widget>? actionWidgets;
   final bool centerTitle;
+  final bool automaticallyImplyLeading;
   final TextStyle? textStyle;
 
   @override
@@ -39,7 +41,7 @@ class CustomAppBar extends StatelessWidget {
         foregroundColor: transp,
         elevation: elevation,
         toolbarHeight: toolbarHeight,
-        automaticallyImplyLeading: false,
+        automaticallyImplyLeading: automaticallyImplyLeading,
         primary: false,
         systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarBrightness: Brightness.light,
